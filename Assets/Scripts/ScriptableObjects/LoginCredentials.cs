@@ -19,16 +19,15 @@ public class LoginCredentials : ScriptableObject
         }
     }
 
-    public bool ValidateLogin(string email, string password) 
+    public (bool isEmailValid, bool isPasswordValid) ValidateLogin(string email, string password) 
     {
         if (credentials.TryGetValue(email, out string storedPassword)) 
         {
-            string message = storedPassword == password ? "Password matched" : "Passowrd not matched";
-            Debug.Log(message);
-            return storedPassword == password;
+            bool isPasswordMatched = storedPassword == password;
+            
+            return (true, isPasswordMatched);
         }
-        Debug.Log("Email Id not found");
-        return false;
+        return (false, false);
     }
 }
 
