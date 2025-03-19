@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class LoginCredentials : ScriptableObject
 {
     [SerializeField] private List<LoginData> loginData = new List<LoginData>();
-    private Dictionary<string, string> credentials = new Dictionary<string, string>();
+    private Dictionary<string, UserData> credentials = new Dictionary<string, UserData>();
 
     public void SetCredentialsData() 
     {
@@ -14,20 +14,33 @@ public class LoginCredentials : ScriptableObject
         {
             if (!credentials.ContainsKey(data.emailId)) 
             {
-                credentials.Add(data.emailId, data.password);
+                credentials.Add(data.emailId, data.userdata);
             }
         }
     }
 
     public (bool isEmailValid, bool isPasswordValid) ValidateLogin(string email, string password) 
     {
-        if (credentials.TryGetValue(email, out string storedPassword)) 
+        if (credentials.TryGetValue(email, out UserData userdata)) 
         {
-            bool isPasswordMatched = storedPassword == password;
+            bool isPasswordMatched = userdata.password == password;
             
             return (true, isPasswordMatched);
         }
         return (false, false);
+    }
+
+    public UserProfileData GetProfileData(string email) 
+    {
+        UserProfileData userData = new UserProfileData();
+        userData.emailId = email;
+
+        if (credentials.TryGetValue(email, out UserData data)) 
+        {
+            userData.userName = data.userName;
+        }
+
+        return userData;
     }
 }
 
@@ -36,5 +49,13 @@ public class LoginCredentials : ScriptableObject
 public class LoginData 
 {
     public string emailId;
-    public string password;
+    public UserData userdata;
 }
+
+[Serializable]
+public class UserData 
+{
+    public string password;
+    public string userName;
+}
+

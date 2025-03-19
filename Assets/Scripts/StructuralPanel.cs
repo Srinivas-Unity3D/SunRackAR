@@ -1,16 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class StructuralPanel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Button menuButton;
+    [SerializeField] private Button homeButton;
+    [SerializeField] private TMP_Dropdown heightDropDown;
+    [SerializeField] private TMP_Dropdown panelsDropDown;
+    [SerializeField] private Button arMode;
+    [SerializeField] private Button mapMode;
+
+
     void Start()
     {
-        
+        menuButton.onClick.AddListener(ShowSidePanel);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ShowSidePanel() 
     {
-        
+        UIManager.Instance.sidePanel.ShowPanel();
     }
 }

@@ -14,3 +14,10 @@ public class Messages
 
     public const string loginSuccessful = "Login Successful";
 }
+
+
+public class UserProfileData 
+{
+    public string userName;
+    public string emailId;
+}
