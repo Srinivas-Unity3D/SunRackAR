@@ -5,6 +5,13 @@ public class Constants
     
 }
 
+
+public class ScenesInBuild 
+{
+    public const string menuScene = "Menu";
+    public const string ARScene = "ARScene";
+}
+
 public class Messages 
 {
     public const string emailField = "Email field should not be empty.";
