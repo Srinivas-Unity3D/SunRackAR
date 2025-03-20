@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class ARModeManager : MonoBehaviour
 {
@@ -19,5 +20,5 @@ public class ARModeManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-  
+   
 }
