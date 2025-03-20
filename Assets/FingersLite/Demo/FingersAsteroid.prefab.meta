@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d0fb7a4bac33846aaab3df2c09c886b0
+timeCreated: 1435963935
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: -1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 64276
+  packageName: Fingers Lite - Free Finger Touch Gestures for Unity
+  packageVersion: 2.6.1
+  assetPath: Assets/FingersLite/Demo/FingersAsteroid.prefab
+  uploadId: 501782
