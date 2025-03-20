@@ -37,10 +37,12 @@ public class SidePanel : MonoBehaviour
     {
         if (isARMode)
         {
-            // need to implement ARMode Logout
+            ARModeManager.Instance.globalVariables.isSigIn = false;
+            SceneManager.LoadScene(ScenesInBuild.menuScene);
         }
         else 
         {
+            UIManager.Instance.globalVariables.isSigIn = false;
             UIManager.Instance.DisablePanels();
             HidePanel();
             UIManager.Instance.loginPanel.gameObject.SetActive(true);

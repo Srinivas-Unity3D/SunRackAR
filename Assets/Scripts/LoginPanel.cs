@@ -34,6 +34,7 @@ public class LoginPanel : MonoBehaviour
             return;
         }
         UIManager.Instance.userPrfileData = credentials.GetProfileData(emailId.text);
+        UIManager.Instance.globalVariables.isSigIn = true;
         StartCoroutine(ShowLoginSuccessful(2f));
     }
 
