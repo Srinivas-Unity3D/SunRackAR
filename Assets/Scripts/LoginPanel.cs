@@ -33,7 +33,7 @@ public class LoginPanel : MonoBehaviour
             StartCoroutine(ShowWarningMessage(2f, Messages.wrongPassword));
             return;
         }
-        UIManager.Instance.userPrfileData = credentials.GetProfileData(emailId.text);
+        UIManager.Instance.globalVariables.userData = credentials.GetProfileData(emailId.text);
         UIManager.Instance.globalVariables.isSigIn = true;
         StartCoroutine(ShowLoginSuccessful(2f));
     }

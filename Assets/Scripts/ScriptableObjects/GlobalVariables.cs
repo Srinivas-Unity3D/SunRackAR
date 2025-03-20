@@ -4,4 +4,5 @@ using UnityEngine;
 public class GlobalVariables : ScriptableObject
 {
     public bool isSigIn = false;
+    public UserProfileData userData;
 }

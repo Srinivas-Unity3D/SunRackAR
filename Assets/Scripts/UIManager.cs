@@ -10,8 +10,6 @@ public class UIManager : MonoBehaviour
     public StructuralPanel structuralPanel;
     public SidePanel sidePanel;
 
-    public UserProfileData userPrfileData;
-
     public GlobalVariables globalVariables;
 
     private void Awake()
