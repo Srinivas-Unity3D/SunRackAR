@@ -12,7 +12,8 @@ public class UIManager : MonoBehaviour
 
     public UserProfileData userPrfileData;
 
-    
+    public GlobalVariables globalVariables;
+
     private void Awake()
     {
         if (Instance == null)
@@ -22,6 +23,20 @@ public class UIManager : MonoBehaviour
         else 
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (globalVariables.isSigIn)
+        {
+            DisablePanels();
+            structuralPanel.gameObject.SetActive(true);
+        }
+        else 
+        {
+            DisablePanels();
+            loginPanel.gameObject.SetActive(true);
         }
     }
 

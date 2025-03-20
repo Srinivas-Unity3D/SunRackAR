@@ -8032,6 +8032,7 @@ MonoBehaviour:
   loginPanel: {fileID: 982826649}
   structuralPanel: {fileID: 1584372769}
   sidePanel: {fileID: 1389769806}
+  globalVariables: {fileID: 11400000, guid: 7866f370cc141ad4b8a962acf26c4891, type: 2}
 --- !u!1 &1294929046
 GameObject:
   m_ObjectHideFlags: 0
@@ -8517,6 +8518,7 @@ MonoBehaviour:
   generateBomButton: {fileID: 257474249}
   logoutButton: {fileID: 56675651}
   sidePanel: {fileID: 514615885}
+  isARMode: 0
 --- !u!1 &1420639213
 GameObject:
   m_ObjectHideFlags: 0

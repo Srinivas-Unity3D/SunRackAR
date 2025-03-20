@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class SidePanel : MonoBehaviour
 {
@@ -11,18 +13,38 @@ public class SidePanel : MonoBehaviour
 
     [SerializeField] private GameObject sidePanel;
 
+    [SerializeField] private bool isARMode;
+
     private void Start()
     {
-        closButton.onClick.AddListener(HidePanel);
+        if (isARMode)
+        {
+            roationButton.onClick.AddListener(EnableRoation);
+            positionButton.onClick.AddListener(EnablePositioning);
+            generateBomButton.onClick.AddListener(GenerateBOM);
+        }
+        
         logoutButton.onClick.AddListener(Logout);
+        closButton.onClick.AddListener(HidePanel);
+    }
+
+    private void OnEnable()
+    {
+        isARMode = SceneManager.GetActiveScene().name.Equals(ScenesInBuild.ARScene);
     }
 
     private void Logout() 
     {
-        // if required we can restart the scene or load menu scene
-        UIManager.Instance.DisablePanels();
-        HidePanel();
-        UIManager.Instance.loginPanel.gameObject.SetActive(true);
+        if (isARMode)
+        {
+            // need to implement ARMode Logout
+        }
+        else 
+        {
+            UIManager.Instance.DisablePanels();
+            HidePanel();
+            UIManager.Instance.loginPanel.gameObject.SetActive(true);
+        }
     }
 
 
@@ -35,4 +57,20 @@ public class SidePanel : MonoBehaviour
     {
         sidePanel.SetActive(true);
     }
+
+    private void EnableRoation()
+    {
+       // Enable the placed object Rotation
+    }
+
+    private void EnablePositioning()
+    {
+       // Enable position changes of the placed object
+    }
+
+    private void GenerateBOM()
+    {
+        // Enable position changes of the placed object
+    }
+
 }
