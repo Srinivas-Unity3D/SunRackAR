@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b416c594012c3b4586b1ace2f40f84f, type: 3}
   m_Name: GlobalVariables
   m_EditorClassIdentifier: 
-  isSigIn: 1
+  isSigIn: 0
