@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 430234903}
   - component: {fileID: 430234902}
   - component: {fileID: 430234901}
-  - component: {fileID: 430234900}
+  - component: {fileID: 430234904}
   m_Layer: 0
   m_Name: Ground Plane Stage
   m_TagString: Untagged
@@ -1169,23 +1169,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &430234900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430234899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1308684972, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 430234902}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: 
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 430234902}
 --- !u!114 &430234901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1233,7 @@ MonoBehaviour:
   mSelectedStageType: 0
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 430234900}
+  mPreview: {fileID: 430234904}
 --- !u!4 &430234903
 Transform:
   m_ObjectHideFlags: 0
@@ -1267,6 +1250,23 @@ Transform:
   - {fileID: 543450651661172697}
   m_Father: {fileID: 276737456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &430234904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430234899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308684972, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 430234902}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: 
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 430234902}
 --- !u!1 &516176135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,6 +2046,7 @@ GameObject:
   - component: {fileID: 729694625}
   - component: {fileID: 729694624}
   - component: {fileID: 729694623}
+  - component: {fileID: 729694627}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2140,6 +2141,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &729694627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729694622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ca21fec25c17641ab8b712f8ff0d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planeFinder: {fileID: 1739818275}
+  messagePanel: {fileID: 1083407427}
+  messageText: {fileID: 1376441441}
 --- !u!1 &775359014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,9 +2367,9 @@ RectTransform:
   - {fileID: 1376441440}
   m_Father: {fileID: 729694626}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.123}
+  m_AnchorMax: {x: 1, y: 0.123}
+  m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083407429
@@ -3048,7 +3064,7 @@ GameObject:
   - component: {fileID: 1376441442}
   - component: {fileID: 1376441441}
   m_Layer: 5
-  m_Name: Testing
+  m_Name: MessageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3819,7 +3835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.9187702}
   m_AnchorMax: {x: 1, y: 0.97700006}
-  m_AnchoredPosition: {x: 0, y: 2.257019}
+  m_AnchoredPosition: {x: 0, y: 2.25708}
   m_SizeDelta: {x: 0, y: -3.4660034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580933850
@@ -4088,6 +4104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planeFinder: {fileID: 1739818275}
+  planeFinderUIController: {fileID: 729694627}
 --- !u!1 &1780096935
 GameObject:
   m_ObjectHideFlags: 0

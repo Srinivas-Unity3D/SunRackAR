@@ -3,7 +3,8 @@ using Vuforia;
 
 public class ObjectPlacementController : MonoBehaviour
 {
-    public PlaneFinderBehaviour planeFinder;  
+    public PlaneFinderBehaviour planeFinder;
+    public PlaneFinderUIController planeFinderUIController;
     private bool isPlaced = false;            
 
     void Start()
@@ -25,6 +26,7 @@ public class ObjectPlacementController : MonoBehaviour
 
             planeFinder.enabled = false;
 
+            planeFinderUIController.DisableMessageBox();
             if (planeFinder.PlaneIndicator != null)
             {
                 planeFinder.PlaneIndicator.SetActive(false);
@@ -37,6 +39,7 @@ public class ObjectPlacementController : MonoBehaviour
         isPlaced = false;
 
         planeFinder.enabled = true;
+        planeFinderUIController.ResetMessage();
 
         if (planeFinder.PlaneIndicator != null)
         {
